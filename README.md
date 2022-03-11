@@ -1,3 +1,5 @@
+因原项目疑似不在维护，所以在此做二次开发。
+
 [![AOS - Animate on scroll library](https://s32.postimg.org/ktvt59hol/aos_header.png)](http://michalsnik.github.io/aos/)
 
 [![NPM version](https://img.shields.io/npm/v/aos/next.svg?style=flat)](https://npmjs.org/package/aos)
@@ -77,6 +79,7 @@ AOS.init();
 // below listed default settings
 AOS.init({
   // Global settings:
+  container: window, // AOS Container, accepts CSS Selector (e.g. ".my-awesome-container") or HTMLElement
   disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
   startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
   initClassName: 'aos-init', // class applied after initialization
@@ -93,7 +96,7 @@ AOS.init({
   easing: 'ease', // default easing for AOS animations
   once: false, // whether animation should happen only once - while scrolling down
   mirror: false, // whether elements should animate out while scrolling past them
-  anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+  anchorPlacement: 'top-bottom', // defines which position of the element regarding to window/container should trigger the animation
 });
 ```
 
