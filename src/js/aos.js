@@ -53,8 +53,13 @@ const isBrowserNotSupported = () => document.all && !window.atob;
 const initializeScroll = function initializeScroll() {
   // Define container element
   const container = resolveContainer(options.container);
-  if (!container)
-    throw `AOS - cannot find the container element. The container option must be an HTMLElement or a CSS Selector.`;
+  if (!container) {
+    console.warn(
+      `AOS - cannot find the container element. The container option must be an HTMLElement or a CSS Selector.`
+    );
+    return;
+  }
+
   // Extend elements objects in $aosElements with their positions
   $aosElements = prepare($aosElements, options, container);
   // Perform scroll event, to refresh view and show/hide elements
